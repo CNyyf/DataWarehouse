@@ -1,39 +1,26 @@
 package dao;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Types;
-import java.util.ArrayList;
 
 import dbc.DatabaseConnection;
-import net.sf.json.JSONObject;
-import vo.DbMovieDimension;
 
 public class ATest {
 
-	public static int count_time_test() {
+	public static int getTypes() {
 		DatabaseConnection dbconn = null;
 		try {
 			dbconn = new DatabaseConnection();
 			Connection conn = dbconn.getConnection();
-			String sql = "call test.count_time_test()";
-			CallableStatement cstmt = conn.prepareCall(sql);
-			cstmt.execute();
-			ResultSet rs = cstmt.getResultSet();
+			String sql = "SELECT * FROM dwmovie.type_dimension";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
 			if(rs != null) {
-				System.out.println("state_count:");
 				while(rs.next()) {
-					System.out.println(rs.getString("state") + "\t" + rs.getString("count(*)"));
-					Thread.sleep(1000);
-				}
-			}
-			if(cstmt.getMoreResults()) {
-				rs = cstmt.getResultSet();
-				if(rs.next()) {
-					System.out.println("time count (microsecond):" + rs.getLong(1));
+					System.out.println(rs.getString("typename"));
 				}
 			}
 		} catch (Exception e) {
@@ -83,25 +70,25 @@ public class ATest {
 		return 0;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ArrayList<Long> timeCountList = new ArrayList<Long>();
+		getTypes();
+		/*ArrayList<Long> timeCountList = new ArrayList<Long>();
 		ArrayList<Long> movieCountList = new ArrayList<Long>();
 		ArrayList<DbMovieDimension> movieList = new ArrayList<DbMovieDimension>();
-		/*String in_moviename = "In the Name of the King: A Dungeon Siege Tale";
-		String in_year = "0000";
-		String in_month = "00";
-		String in_day = "00";
-		String in_season = "0";
-		String in_dayofweek = "0";
-		String in_typename = "Fantasy";
-		String in_directorname = "20th Century Fox";
-		String in_starname = "Jason Statham";
-		String in_actorname = "Aaron Pearl";
+		String in_moviename = null;//"In the Name of the King: A Dungeon Siege Tale";
+		String in_year = null;//"0000";
+		String in_month = null;//"00";
+		String in_day = null;//"00";
+		String in_season = null;//"0";
+		String in_dayofweek = null;//"0";
+		String in_typename = null;//"Fantasy";
+		String in_directorname = null;//"20th Century Fox";
+		String in_starname = "Will Ryan";//"Jason Statham";
+		String in_actorname = null;//"Aaron Pearl";
 		int resultGet = DAOFactory.getGetMoviesDAO().getMoviesByRand(timeCountList, movieList, in_moviename, in_year, in_month, in_day, in_season, in_dayofweek, in_typename, in_directorname, in_starname, in_actorname);
 		System.out.println("Get:\nmessage:\t" + resultGet + "\ntime:\t" + ((timeCountList.size()>0) ? timeCountList.get(0):(-1)));
 		int resultCount = DAOFactory.getCountMoviesDAO().countMoviesByRand(timeCountList, movieCountList, in_moviename, in_year, in_month, in_day, in_season, in_dayofweek, in_typename, in_directorname, in_starname, in_actorname);
 		System.out.println("Count:\nmessage:\t" + resultCount + "\ntime:\t" + ((timeCountList.size()>0) ? timeCountList.get(0):(-1)) + "\ncount:\t" + ((movieCountList.size()>0) ? movieCountList.get(0):(-1)));*/
-		String[] in_moviename = {null, "In the Name of the King: A Dungeon Siege Tale"};
+		/*String[] in_moviename = {null, "In the Name of the King: A Dungeon Siege Tale"};
 		String[] in_year = {null, "2010"};
 		String[] in_month = {null, "06"};
 		String[] in_day = {null, "10"};
@@ -150,7 +137,8 @@ public class ATest {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
+		System.out.print("");
 	}
 
 }

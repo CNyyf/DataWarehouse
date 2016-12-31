@@ -56,11 +56,11 @@ public class GetMoviesDAO {
 			else cstmt.setString(11, in_actorname);
 			cstmt.execute();
 			ResultSet rs = cstmt.getResultSet();
-			movieList.clear();
 			if(rs != null) {
 				while(rs.next()) {
 					DbMovieDimension movie = new DbMovieDimension();
 					movie.setMain(rs);
+					movie.computeTime();
 					movieList.add(movie);
 				}
 			}
