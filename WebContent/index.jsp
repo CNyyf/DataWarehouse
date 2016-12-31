@@ -47,12 +47,12 @@
                             <nav class="nav-primary hidden-xs">
                                 <ul class="nav">
                                     <li class="active">
-                                        <a href="index.html">
+                                        <a href="index.jsp">
                                             <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i>
                                             <span>Home</span> </a>
                                     </li>
                                     <li>
-                                        <a href="datatable.html" class="active">
+                                        <a href="datatable.jsp" class="active">
                                             <i class="fa fa-flask icon"> <b class="bg-success"></b> </i>
                                             <span>DataTable</span>
                                         </a>
@@ -73,7 +73,7 @@
                 <section class="vbox">
                     <section class="scrollable padder">
                         <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-                            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="index.jsp"><i class="fa fa-home"></i> Home</a></li>
                             <li class="active">Home</li>
                         </ul>
                         <div class="row">
@@ -409,9 +409,10 @@
                                                      style="height: 150px">
                                                 </div>
                                             </div>
+                                            <!--
                                             <footer class="panel-footer text-right bg-light lter">
                                                 <button type="submit" class="btn btn-success btn-s-xs">Submit</button>
-                                            </footer>
+                                            </footer> -->
                                         </section>
                                     </div>
                                     <!-- artist select -->

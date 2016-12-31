@@ -38,7 +38,7 @@
                             <nav class="nav-primary hidden-xs">
                                 <ul class="nav">
                                     <li>
-                                        <a href="index.html">
+                                        <a href="index.jsp">
                                             <i class="fa fa-dashboard icon"> <b class="bg-danger"></b> </i>
                                             <span>Home</span> </a>
                                     </li>
@@ -74,7 +74,18 @@
                             <div class="col-sm-6">
                                 <section class="panel panel-default">
                                     <header class="panel-heading">DataWareHouse</header>
-                                    <script>clock(31, 939, 34, 3)</script>
+                                    <%
+                                    long timeMysql = (long)request.getAttribute("timeMysql");
+                                    long timeHive = (long)request.getAttribute("timeHive");
+                                    int temp1 = (int)(timeMysql / 1000);
+                                    int a = temp1 / 1000;
+                                    int b = temp1 % 1000;
+                                    int temp2 = (int)(timeHive / 1000);
+                                    int c = temp2 / 1000;
+                                    int d = temp2 % 1000;
+
+                                    %>
+                                    <script>clock(<%=a%>, <%=b%>, <%=c%>, <%=d%>)</script>
                                     <table class="table table-striped m-b-none text-sm">
                                         <tbody>
                                         <tr>
