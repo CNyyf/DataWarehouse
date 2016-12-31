@@ -75,8 +75,9 @@
                                 <section class="panel panel-default">
                                     <header class="panel-heading">DataWareHouse</header>
                                     <%
-                                    long timeMysql = (long)request.getAttribute("timeMysql");
-                                    long timeHive = (long)request.getAttribute("timeHive");
+                                        HttpSession session1 = request.getSession(true);
+                                    long timeMysql = (long)session1.getAttribute("timeMysql");
+                                    long timeHive = (long)session1.getAttribute("timeHive");
                                     int temp1 = (int)(timeMysql / 1000);
                                     int a = temp1 / 1000;
                                     int b = temp1 % 1000;

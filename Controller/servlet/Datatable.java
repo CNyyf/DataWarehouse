@@ -171,9 +171,9 @@ public class Datatable extends HttpServlet {
                 DAOFactory.getGetMoviesDAO().getMoviesByRand(timeCountList, movieListMysql, moviename, year, month, day, season, dayofweek, type, director, star, actor);
                 timeCountMysql = timeCountList.get(0);
 
-                Random random = new Random();
-                request.setAttribute("timeMysql", timeCountMysql);
-                request.setAttribute("timeHive", (long)(timeCountMysql* (Math.random()*2 + 5.0)));
+                HttpSession session1 = request.getSession(true);
+                session1.setAttribute("timeMysql", timeCountMysql);
+                session1.setAttribute("timeHive", (long)(timeCountMysql* (Math.random()*2 + 5.0)));
             }
         }
 
