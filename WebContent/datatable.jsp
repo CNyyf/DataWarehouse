@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8" %>
+<!DOCTYPE html>
 <html lang="en" class="app">
 <head>
     <meta charset="utf-8"/>
@@ -41,7 +43,7 @@
                                             <span>Home</span> </a>
                                     </li>
                                     <li class="active">
-                                        <a href="datatable.html" class="active">
+                                        <a href="datatable.jsp" class="active">
                                             <i class="fa fa-flask icon"> <b class="bg-success"></b> </i>
                                             <span>DataTable</span>
                                         </a>
@@ -123,13 +125,13 @@
                                                                          data-title="ajax to load the data."></i>
                             </header>
                             <div class="table-responsive">
-                                <table class="table table-striped m-b-none" data-ride="datatables">
+                                <table class="table table-striped m-b-none" data-ride="datatables" id="datatable">
                                     <thead>
                                     <tr>
                                         <th width="20%">Product Id</th>
                                         <th width="30%">Movie Name</th>
                                         <th width="20%">Posted Time</th>
-                                        <th width="30%">Movie Version</th>
+                                        <th width="30%">Version</th>
                                     </tr>
                                     </thead>
                                     <tbody>

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="DataWarehouse:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/DataWarehouse_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DataWarehouse" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="DataWarehouse/web/Web" />
+    </root>
+  </artifact>
+</component>
