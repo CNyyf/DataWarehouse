@@ -61,6 +61,9 @@ public class CountMoviesDAO {
 					movieCountList.add(rs.getLong(1));
 				}
 			}
+			if(movieCountList.size() == 0) {
+				movieCountList.add((long) 0);
+			}
 			timeCountList.clear();
 			timeCountList.add(Math.abs(cstmt.getLong(1)));
 			message = SUCCESS;

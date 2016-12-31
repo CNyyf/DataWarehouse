@@ -1,0 +1,32 @@
+.clock {
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    color: #fff;
+}
+
+#Date {
+    font-size: 24px;
+    text-align: center;
+}
+
+.clock ul {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.clock ul li {
+    display: inline;
+    font-size: 6em;
+    text-align: center;
+}
+
+#point {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
